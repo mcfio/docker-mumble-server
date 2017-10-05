@@ -1,7 +1,7 @@
 FROM mcfio/alpine
 
 RUN apk upgrade --update \
-  && apk add --no-cache icu-libs murmurd
+  && apk add --no-cache icu-libs murmur
 
 COPY root/ /
 

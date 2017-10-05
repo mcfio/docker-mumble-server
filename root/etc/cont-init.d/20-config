@@ -2,7 +2,7 @@
 
 # create our folders
 mkdir -p \
-	/config/{data,log,run}
+	/config/{data,log}
 
 # copy default murmur.ini if one does not exist
 [[ ! -f /config/mumble-server.ini ]] && cp /defaults/murmur.ini /config/mumble-server.ini

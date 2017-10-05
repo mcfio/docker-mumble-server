@@ -4,14 +4,9 @@
 mkdir -p \
 	/config/{data,log,run}
 
-# create symlinks for config
-[[ -L /var/log/murmur.log && ! /var/log/murmur.log -ef /var/log/murmur.log ]] && unlink /var/log/murmur.log
-[[ ! -L /var/log/murmur.log ]] && ln -s /config/log/murmur.log /var/log/murmur.log
-
 # copy default murmur.ini if one does not exist
 [[ ! -f /config/mumble-server.ini ]] && cp /defaults/murmur.ini /config/mumble-server.ini
 
 # permissions
 chown -R mcf:mcf \
-	/config \
-	/var/lib/murmur
+	/config

@@ -3,4 +3,4 @@
 cd /config || exit
 
 exec \
-  s6-setuidgid mcf murmurd -ini /config/mumble-server.ini
+  s6-setuidgid mcf murmurd -fg -ini /config/mumble-server.ini

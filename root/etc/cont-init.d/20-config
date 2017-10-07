@@ -4,5 +4,8 @@
 [[ ! -f /config/mumble-server.ini ]] && cp /defaults/murmur.ini /config/mumble-server.ini
 
 # permissions
-chown -R mcf:mcf \
-	/config
+# because we bind mount read-only the certs directory we need to skip it during
+# chmod's - otherwise errors appear during startup
+find /config -name "certs" -prune -o -print0 | xargs \
+	chown -R mcf:mcf \
+		/config

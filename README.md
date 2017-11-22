@@ -2,8 +2,7 @@
 
 ![badges-alpine] ![badges-murmur]
 
-**Mumble** is a VOIP application akin to Discord or Teamspeak that allows users to communicate over a private server. It implements a client-server architecture, that does provide
-end-to-end encryption. **Murmur** is the server that Mumble clients to connect to.
+**Mumble** is a VOIP application akin to Discord or Teamspeak that allows users to communicate over a private server. It implements a client-server architecture, that provides end-to-end encryption for communication data. **Murmur** is the server that Mumble clients to connect to.
 [Learn More][vendor-mumble].
 
 `mcfio/mumble-server` enables you to easily run multiple (lightweight) murmur

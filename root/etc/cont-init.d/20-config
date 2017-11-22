@@ -1,9 +1,0 @@
-#!/usr/bin/with-contenv bash
-
-# copy default murmur.ini if one does not exist
-[[ ! -f /config/mumble-server.ini ]] && cp /defaults/murmur.ini /config/mumble-server.ini
-
-# permissions
-# because we bind mount read-only the certs directory we need to skip it during
-# chmod's - otherwise errors appear during startup
-find /config -not -path "*/certs*" -exec chown mcf:mcf {} \;

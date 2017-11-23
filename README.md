@@ -1,4 +1,4 @@
-# mcfio/mumble-server
+# mcfio/mumble-server [![badges-travis-ci]][travis-ci]
 
 ![badges-alpine] ![badges-murmur]
 
@@ -10,6 +10,8 @@ instances on the same host.
 
 The content in this repository is based heavily on the work done by `containerly/murmur`.
 
+[badges-travis-ci]: https://travis-ci.org/mcfio/docker-mumble-server.svg?branch=master "Build Status"
+[travis-ci]: https://travis-ci.org/mcfio/docker-mumble-server 
 [badges-alpine]: https://img.shields.io/badge/alpine-latest-green.svg?maxAge=2592000 "Alpine Linux"
 [badges-murmur]: https://img.shields.io/badge/murmur-1.2.19-green.svg?maxAge=2592000 "Murmur v1.2.19"
 [vendor-mumble]: http://wiki.mumble.info/wiki/Main_Page "Learn About Mumble"

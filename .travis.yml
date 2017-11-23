@@ -1,0 +1,11 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker built -t mcfio/mumble-server:travis docker-mumble-server
+  - docker run -d -p 64738:64738 mcfio/mumble-server
+
+script:
+  - docker ps | grep mcfio/mumble-server:travis

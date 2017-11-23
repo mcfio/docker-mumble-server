@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t mcfio/mumble-server:travis docker-mumble-server
+  - docker build -t mcfio/mumble-server:travis mcfio/docker-mumble-server
   - docker run -d -p 64738:64738 mcfio/mumble-server
 
 script:

@@ -15,9 +15,7 @@ WORKDIR /etc/murmur
 
 ADD https://github.com/mumble-voip/mumble/releases/download/${MURMUR_VERSION}/murmur-static_x86-${MURMUR_VERSION}.tar.bz2 /tmp
 
-RUN apk upgrade --update-cache
-
-RUN apk add \
+RUN apk add --no-cache \
     pwgen \
     libressl \
   && addgroup -S murmur \

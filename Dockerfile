@@ -13,8 +13,6 @@ LABEL org.label-schema.schema-version="1.0" \
 
 WORKDIR /etc/murmur
 
-ADD https://github.com/mumble-voip/mumble/releases/download/${MURMUR_VERSION}/murmur-static_x86-${MURMUR_VERSION}.tar.bz2 /tmp
-
 RUN apk add --no-cache \
     pwgen \
     libressl \
@@ -27,11 +25,10 @@ RUN apk add --no-cache \
   && chown -R murmur:murmur \
     /var/run/murmur \
     /etc/murmur \
-  && tar -x -j -C /opt -f /tmp/murmur-static_x86-${MURMUR_VERSION}.tar.bz2 \
-  && mv /opt/murmur* /opt/murmur \
-  && rm -rf \
-    /var/cache/apk/* \
-    /tmp/*
+  && wget \
+    https://github.com/mumble-voip/mumble/releases/download/${MURMUR_VERSION}/murmur-static_x86-${MURMUR_VERSION}.tar.bz2 -O - | \
+    tar -x -j -C /opt -f - \
+  && mv /opt/murmur* /opt/murmur
 
 COPY config/ /etc/murmur
 COPY docker-entrypoint.sh /usr/local/bin

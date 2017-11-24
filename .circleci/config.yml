@@ -1,7 +1,8 @@
 version: 2
 jobs:
   build:
-    docker: true
+    docker:
+      - image: - image: docker:17.09.0-ce-git
     steps:
       - checkout
       - build_remote_docker

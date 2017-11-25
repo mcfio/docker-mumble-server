@@ -14,6 +14,12 @@ jobs:
               -t mcfio-mumble-server .
 
       - run:
+          name: Validate mumble-server starts
+          command: |
+            docker run -d -p 64738:64738 mcfio-mumble-server
+            nc -zv localhost 64738
+
+      - run:
           name: Push image to Docker Hub
           command: |
             docker login -u $DOCKER_USER -p $DOCKER_PASS

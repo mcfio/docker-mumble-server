@@ -4,9 +4,10 @@ ENV MURMUR_VERSION=1.2.19
 
 LABEL org.label-schema.schema-version="1.0" \
   org.label-schema.name="mcf.io Mumble Server" \
-  org.label-schema.build="" \
+  org.label-schema.build-date="${BUILD_DATE}" \
   org.label-schema.url="https://wiki.mumble.info/wiki/Main_Page" \
-  org.label-schema.vcs-url="https://github.com/mcfio/docker-mumble-server" \
+  org.label-schema.vcs-url="https://github.com/mcfio/docker-mumble-server.git" \
+  org.label-schema.vcs-ref="${VCS_REF}"
   org.label-schema.vendor="mcf.io" \
   org.label-schema.version="${MURMUR_VERSION}" \
   org.label-schema.docker.cmd="docker run -d -p 64738:64738 -p 64738:64738/udp -v <data dir>:/data mcfio/mumble-server"

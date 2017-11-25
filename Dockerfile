@@ -1,5 +1,8 @@
 FROM alpine:latest
 
+ARG BUILD_DATE
+ARG VCS_REF
+
 ENV MURMUR_VERSION=1.2.19
 
 LABEL org.label-schema.schema-version="1.0" \

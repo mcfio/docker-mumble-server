@@ -12,6 +12,9 @@ setVal() {
     fi
 }
 
+# start from a new murmur.ini every time.
+cp /etc/murmur/murmur.ini.bak /etc/murmur/murmur.ini
+
 setVal ice "${MUMBLE_ICE}"
 setVal icesecretread "${MUMBLE_ICESECRETREAD}"
 setVal icesecretwrite "${MUMBLE_ICESECRETWRITE}"

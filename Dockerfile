@@ -32,7 +32,8 @@ RUN apk add --no-cache \
   && wget \
     https://github.com/mumble-voip/mumble/releases/download/${MURMUR_VERSION}/murmur-static_x86-${MURMUR_VERSION}.tar.bz2 -O - | \
     tar -x -j -C /opt -f - \
-  && mv /opt/murmur* /opt/murmur
+  && mv /opt/murmur* /opt/murmur \
+  && cp /etc/murmur/murmur.ini /etc/murmur/murmur.ini.bak
 
 COPY config/ /etc/murmur
 COPY docker-entrypoint.sh /usr/local/bin

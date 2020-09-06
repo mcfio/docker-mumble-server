@@ -17,6 +17,9 @@ LABEL org.label-schema.schema-version="1.0" \
 
 WORKDIR /etc/murmur
 
+COPY config/ /etc/murmur
+COPY docker-entrypoint.sh /usr/local/bin
+
 RUN apk add --no-cache \
     pwgen \
     libressl \
@@ -34,9 +37,6 @@ RUN apk add --no-cache \
     tar -x -j -C /opt -f - \
   && mv /opt/murmur* /opt/murmur \
   && cp /etc/murmur/murmur.ini /etc/murmur/murmur.ini.bak
-
-COPY config/ /etc/murmur
-COPY docker-entrypoint.sh /usr/local/bin
 
 EXPOSE 64738/tcp 64738/udp
 

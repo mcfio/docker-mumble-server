@@ -22,6 +22,6 @@ jobs:
       - run:
           name: Push image to Docker Hub
           command: |
-            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            echo $DOCKER_TOKEN | docker login -u $DOCKER_USER --password-stdin
             docker tag mcfio-mumble-server mcfio/mumble-server:latest
             docker push mcfio/mumble-server:latest

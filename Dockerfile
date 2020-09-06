@@ -22,7 +22,7 @@ RUN apk add --no-cache \
     libressl \
   && addgroup -S murmur \
   && adduser -SDH murmur -G murmur \
-  && mkdir \
+  && mkdir -p \
     /data \
     /opt \
     /var/run/murmur \
